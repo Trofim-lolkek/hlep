@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		.text {
+
+		}
+		.hlep {
+			height: 200px;
+			width: 250px;
+			background-size: 100% 100%;
+			position: absolute;
+			transition: 1s;
+		}
+		.cartina1 {
+			height: 200px;
+			width: 250px;
+			background-size: 100% 100%;
+			position: absolute;
+			transition: 1s;
+		}
+	</style>
+</head>
+<body style="background-image:url(download.jpg); background-size: cover;">
+	<div> 
+		<img src="download.jpg" style="">
+		<h1>съесте хлеб</h1>
+		<h1>у тебя <span class="sum">1</span></h1> попытки</h1>
+		<button class="btn">Изменить позицию</button>
+		<div class="hlep" style="background-image: url(images.jpg);left: 600px;"></div>
+		<div class="cartina1" style="background-image: url(подумой-оригинал.jpg); left: 900px"></div>
+	</div>
+
+     <script type="text/javascript">
+     	let sum = 1
+     	document.querySelector(".btn").onclick = function(){
+			document.querySelector(".hlep").style.left = "1000px"
+			document.querySelector(".cartina1").style.left = "400px"
+			document.querySelector(".hlep").style.background = "black";
+			document.querySelector(".cartina1").style.background = "black";
+     	}
+
+     	document.querySelector(".hlep").onclick = function(){
+			alert("you win")
+			document.querySelector(".hlep").style.backgroundImage = "url(images.jpg)"
+		}
+
+		document.querySelector(".cartina1").onclick = function(){
+			attempts = attempts - 1;
+			if(attempts == 0){
+				alert("ты проиграл");
+				document.querySelector(".cartina1").style.display = "none"
+			}
+		}
+     </script>
+</body>
+</html>
